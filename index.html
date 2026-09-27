@@ -255,9 +255,19 @@
     .nav a{font-size:var(--fs-ui-sm); padding:0.55rem 0.45rem;}
     .lang{margin-left:var(--space-1); padding:0 0.45rem;}
   }
-  @media (max-width:360px){
-    .brand-name{display:none;}
+  /* small phones (many Android phones are 360px wide): keep the full "Movelty" name and tighten the menu instead */
+  @media (max-width:400px){
+    .site-header .wrap{gap:var(--space-1);}
+    .brand{font-size:1.04rem;}
+    .nav{gap:0;}
     .nav a{padding:0.55rem 0.35rem; font-size:var(--fs-ui-xs);}
+    .lang{margin-left:var(--space-1); padding:0 0.4rem; gap:0.25rem;}
+    .lang svg{display:none;}
+  }
+  @media (max-width:340px){
+    .brand{font-size:0.98rem;}
+    .nav a{padding:0.55rem 0.25rem; min-width:40px;}
+    .lang{padding:0 0.3rem;}
   }
 
   /* =============================== HERO =============================== */
@@ -598,6 +608,14 @@
     .glance-label{flex:0 0 100%;}
     .detail-cta .btn{flex:1 1 100%;}
   }
+
+  /* opening hours */
+  .today{margin-top:0.2rem; font-family:var(--font-ui); font-size:var(--fs-ui-sm); color:var(--verify);}
+  .hours tr.is-today td{color:var(--text); font-weight:var(--weight-strong);}
+  .hours tr.is-today td:first-child::after{content:" ●"; color:var(--verify); font-size:0.7em; vertical-align:middle;}
+  .glance--4{grid-template-columns:repeat(4,minmax(0,1fr));}
+  @media (max-width:900px){ .glance--4{grid-template-columns:repeat(2,minmax(0,1fr));} .glance--4 .glance-item:nth-child(3){border-left:none;} .glance--4 .glance-item:nth-child(n+3){border-top:var(--border-w) solid var(--border);} }
+  @media (max-width:720px){ .glance--4{grid-template-columns:1fr;} .glance--4 .glance-item:nth-child(n+2){border-top:var(--border-w) solid var(--border);} }
 
   /* ============================== MOTION ==============================
      Motion explains, it doesn't decorate:
@@ -1105,6 +1123,31 @@
 "verifiedText": "Prices and drop-in rules confirmed directly with the studio.",
 "flagZone": "flagship founding gym",
 "flyWhere": "20 locations across Dublin",
+"hrs.noClasses": "No classes",
+"hrs.bookText": "Session times are shown when you book on their website.",
+"hrs.book": "Book a session",
+"hrs.open": "Opening hours",
+"hrs.classes": "Class times",
+"hrs.bh": "bank holidays",
+"hrs.closed": "Closed",
+"hrs.unknown": "Not confirmed",
+"hrs.24": "Open 24 hours",
+"hrs.src": "From {src}, checked 27 September 2026. Times can change, so check before you go.",
+"hrs.srcGym": "Confirmed by the gym. Weekend hours weren't confirmed, so check before you go.",
+"hrs.see": "See their timetable",
+"hrs.site": "See their website",
+"hrs.linkText": "This studio publishes its class times on its own timetable, which changes from week to week.",
+"hrs.note.starts": "Times show the first and last class of the day. Pick a class on their timetable before you go.",
+"hrs.note.rojj": "Published for their Magennis Place academy; they're moving to Drury Street, so check which address before you go.",
+"hrs.note.dbc": "These are the yoga class times. Beginner classes run Monday lunchtime and Tuesday evening.",
+"hrs.openToday": "Open today {t}",
+"hrs.classesToday": "Classes today {t}",
+"hrs.closedToday": "Closed today",
+"hrs.noClassesToday": "No classes today",
+"go.today": "Today",
+"proof.indie": "independent studios, hand-checked",
+"proof.fly": "FLYEFIT gyms on one day pass",
+"dir.summary": "{n} independent studios and FLYEFIT's {f} gyms · hand-checked, growing weekly",
 "dir.searchLabel": "Search",
 "dir.search": "Search by gym, area or discipline",
 "dir.sort": "Sort",
@@ -1250,6 +1293,31 @@
 "verifiedText": "Preços e regras de entrada confirmados diretamente com o estúdio.",
 "flagZone": "ginásio fundador de referência",
 "flyWhere": "20 locais em Dublin",
+"hrs.noClasses": "Sem aulas",
+"hrs.bookText": "Os horários das sessões aparecem quando reserva no site deles.",
+"hrs.book": "Reservar uma sessão",
+"hrs.open": "Horário",
+"hrs.classes": "Horário das aulas",
+"hrs.bh": "feriados",
+"hrs.closed": "Fechado",
+"hrs.unknown": "Não confirmado",
+"hrs.24": "Aberto 24 horas",
+"hrs.src": "Fonte: {src}, verificado a 27 de setembro de 2026. Os horários podem mudar, confirme antes de ir.",
+"hrs.srcGym": "Confirmado pelo ginásio. O horário de fim de semana não foi confirmado, verifique antes de ir.",
+"hrs.see": "Ver o horário deles",
+"hrs.site": "Ver o site",
+"hrs.linkText": "Este estúdio publica o horário das aulas no seu próprio calendário, que muda de semana para semana.",
+"hrs.note.starts": "Os horários mostram a primeira e a última aula do dia. Escolha uma aula no horário deles antes de ir.",
+"hrs.note.rojj": "Horário publicado para a academia de Magennis Place; estão a mudar-se para Drury Street, confirme a morada antes de ir.",
+"hrs.note.dbc": "Estes são os horários das aulas de yoga. As aulas para principiantes são à segunda ao almoço e à terça à noite.",
+"hrs.openToday": "Aberto hoje {t}",
+"hrs.classesToday": "Aulas hoje {t}",
+"hrs.closedToday": "Fechado hoje",
+"hrs.noClassesToday": "Sem aulas hoje",
+"go.today": "Hoje",
+"proof.indie": "estúdios independentes, verificados um a um",
+"proof.fly": "ginásios FLYEFIT com um só passe diário",
+"dir.summary": "{n} estúdios independentes e os {f} ginásios FLYEFIT · verificados um a um, a crescer todas as semanas",
 "dir.searchLabel": "Pesquisar",
 "dir.search": "Pesquise por ginásio, zona ou modalidade",
 "dir.sort": "Ordenar",
@@ -1395,6 +1463,31 @@
 "verifiedText": "Prix et règles d'accès confirmés directement avec le studio.",
 "flagZone": "salle fondatrice phare",
 "flyWhere": "20 salles à Dublin",
+"hrs.noClasses": "Pas de cours",
+"hrs.bookText": "Les créneaux s'affichent lorsque vous réservez sur leur site.",
+"hrs.book": "Réserver une séance",
+"hrs.open": "Horaires d'ouverture",
+"hrs.classes": "Horaires des cours",
+"hrs.bh": "jours fériés",
+"hrs.closed": "Fermé",
+"hrs.unknown": "Non confirmé",
+"hrs.24": "Ouvert 24 h/24",
+"hrs.src": "Source : {src}, vérifié le 27 septembre 2026. Les horaires peuvent changer, vérifiez avant de venir.",
+"hrs.srcGym": "Confirmé par la salle. Les horaires du week-end n'ont pas été confirmés, vérifiez avant de venir.",
+"hrs.see": "Voir leur planning",
+"hrs.site": "Voir leur site",
+"hrs.linkText": "Ce studio publie ses horaires de cours sur son propre planning, qui change chaque semaine.",
+"hrs.note.starts": "Les horaires indiquent le premier et le dernier cours de la journée. Choisissez un cours sur leur planning avant de venir.",
+"hrs.note.rojj": "Horaires publiés pour leur salle de Magennis Place ; ils déménagent à Drury Street, vérifiez l'adresse avant de venir.",
+"hrs.note.dbc": "Ce sont les horaires des cours de yoga. Les cours débutants ont lieu le lundi midi et le mardi soir.",
+"hrs.openToday": "Ouvert aujourd'hui {t}",
+"hrs.classesToday": "Cours aujourd'hui {t}",
+"hrs.closedToday": "Fermé aujourd'hui",
+"hrs.noClassesToday": "Pas de cours aujourd'hui",
+"go.today": "Aujourd'hui",
+"proof.indie": "studios indépendants, vérifiés un par un",
+"proof.fly": "salles FLYEFIT avec un seul pass journée",
+"dir.summary": "{n} studios indépendants et les {f} salles FLYEFIT · vérifiés un par un, de nouvelles adresses chaque semaine",
 "dir.searchLabel": "Rechercher",
 "dir.search": "Rechercher une salle, un quartier ou une discipline",
 "dir.sort": "Trier",
@@ -1540,6 +1633,31 @@
 "verifiedText": "Prezzi e regole d'ingresso confermati direttamente con lo studio.",
 "flagZone": "palestra fondatrice di punta",
 "flyWhere": "20 sedi a Dublino",
+"hrs.noClasses": "Nessuna lezione",
+"hrs.bookText": "Gli orari delle sessioni compaiono quando prenoti sul loro sito.",
+"hrs.book": "Prenota una sessione",
+"hrs.open": "Orari di apertura",
+"hrs.classes": "Orari delle lezioni",
+"hrs.bh": "festivi",
+"hrs.closed": "Chiuso",
+"hrs.unknown": "Non confermato",
+"hrs.24": "Aperto 24 ore",
+"hrs.src": "Fonte: {src}, verificato il 27 settembre 2026. Gli orari possono cambiare, controlla prima di andare.",
+"hrs.srcGym": "Confermato dalla palestra. Gli orari del fine settimana non sono stati confermati, controlla prima di andare.",
+"hrs.see": "Vedi il loro orario",
+"hrs.site": "Vedi il sito",
+"hrs.linkText": "Questo studio pubblica gli orari delle lezioni sul proprio calendario, che cambia ogni settimana.",
+"hrs.note.starts": "Gli orari indicano la prima e l'ultima lezione del giorno. Scegli una lezione sul loro orario prima di andare.",
+"hrs.note.rojj": "Orari pubblicati per la sede di Magennis Place; si stanno trasferendo a Drury Street, controlla l'indirizzo prima di andare.",
+"hrs.note.dbc": "Questi sono gli orari delle lezioni di yoga. Le lezioni per principianti sono il lunedì a pranzo e il martedì sera.",
+"hrs.openToday": "Aperto oggi {t}",
+"hrs.classesToday": "Lezioni oggi {t}",
+"hrs.closedToday": "Chiuso oggi",
+"hrs.noClassesToday": "Nessuna lezione oggi",
+"go.today": "Oggi",
+"proof.indie": "studi indipendenti, verificati uno per uno",
+"proof.fly": "palestre FLYEFIT con un solo pass giornaliero",
+"dir.summary": "{n} studi indipendenti e le {f} palestre FLYEFIT · verificati uno per uno, nuovi posti ogni settimana",
 "dir.searchLabel": "Cerca",
 "dir.search": "Cerca per palestra, zona o disciplina",
 "dir.sort": "Ordina",
@@ -1685,6 +1803,31 @@
 "verifiedText": "Precios y normas de acceso confirmados directamente con el estudio.",
 "flagZone": "gimnasio fundador destacado",
 "flyWhere": "20 centros en Dublín",
+"hrs.noClasses": "Sin clases",
+"hrs.bookText": "Los horarios de las sesiones aparecen al reservar en su web.",
+"hrs.book": "Reservar una sesión",
+"hrs.open": "Horario",
+"hrs.classes": "Horario de clases",
+"hrs.bh": "festivos",
+"hrs.closed": "Cerrado",
+"hrs.unknown": "Sin confirmar",
+"hrs.24": "Abierto 24 horas",
+"hrs.src": "Fuente: {src}, comprobado el 27 de septiembre de 2026. Los horarios pueden cambiar, compruébalo antes de ir.",
+"hrs.srcGym": "Confirmado por el gimnasio. El horario del fin de semana no está confirmado, compruébalo antes de ir.",
+"hrs.see": "Ver su horario",
+"hrs.site": "Ver su web",
+"hrs.linkText": "Este estudio publica su horario de clases en su propio calendario, que cambia cada semana.",
+"hrs.note.starts": "Las horas indican la primera y la última clase del día. Elige una clase en su horario antes de ir.",
+"hrs.note.rojj": "Horario publicado para su academia de Magennis Place; se están mudando a Drury Street, comprueba la dirección antes de ir.",
+"hrs.note.dbc": "Estos son los horarios de las clases de yoga. Las clases de iniciación son el lunes a mediodía y el martes por la tarde.",
+"hrs.openToday": "Abierto hoy {t}",
+"hrs.classesToday": "Clases hoy {t}",
+"hrs.closedToday": "Cerrado hoy",
+"hrs.noClassesToday": "Hoy no hay clases",
+"go.today": "Hoy",
+"proof.indie": "estudios independientes, comprobados uno a uno",
+"proof.fly": "gimnasios FLYEFIT con un solo pase de día",
+"dir.summary": "{n} estudios independientes y los {f} gimnasios FLYEFIT · comprobados uno a uno, y cada semana más",
 "dir.searchLabel": "Buscar",
 "dir.search": "Busca por gimnasio, zona o disciplina",
 "dir.sort": "Ordenar",
@@ -1830,6 +1973,31 @@
 "verifiedText": "Preise und Zugangsregeln direkt mit dem Studio bestätigt.",
 "flagZone": "Flaggschiff-Gründungsstudio",
 "flyWhere": "20 Standorte in Dublin",
+"hrs.noClasses": "Keine Kurse",
+"hrs.bookText": "Die Sessionzeiten siehst du bei der Buchung auf ihrer Website.",
+"hrs.book": "Session buchen",
+"hrs.open": "Öffnungszeiten",
+"hrs.classes": "Kurszeiten",
+"hrs.bh": "Feiertage",
+"hrs.closed": "Geschlossen",
+"hrs.unknown": "Nicht bestätigt",
+"hrs.24": "Rund um die Uhr geöffnet",
+"hrs.src": "Quelle: {src}, geprüft am 27. September 2026. Zeiten können sich ändern, bitte vorher prüfen.",
+"hrs.srcGym": "Vom Studio bestätigt. Wochenendzeiten wurden nicht bestätigt, bitte vorher prüfen.",
+"hrs.see": "Zum Stundenplan",
+"hrs.site": "Zur Website",
+"hrs.linkText": "Dieses Studio veröffentlicht seine Kurszeiten im eigenen Stundenplan, der sich jede Woche ändert.",
+"hrs.note.starts": "Die Zeiten zeigen den ersten und letzten Kurs des Tages. Wähle vorher einen Kurs im Stundenplan.",
+"hrs.note.rojj": "Veröffentlicht für den Standort Magennis Place; sie ziehen in die Drury Street um, also vorher die Adresse prüfen.",
+"hrs.note.dbc": "Das sind die Yoga-Kurszeiten. Anfängerkurse gibt es montags mittags und dienstags abends.",
+"hrs.openToday": "Heute geöffnet {t}",
+"hrs.classesToday": "Heute Kurse {t}",
+"hrs.closedToday": "Heute geschlossen",
+"hrs.noClassesToday": "Heute keine Kurse",
+"go.today": "Heute",
+"proof.indie": "unabhängige Studios, einzeln geprüft",
+"proof.fly": "FLYEFIT-Studios mit einem Tagespass",
+"dir.summary": "{n} unabhängige Studios und die {f} FLYEFIT-Studios · einzeln geprüft, jede Woche mehr",
 "dir.searchLabel": "Suchen",
 "dir.search": "Nach Studio, Gegend oder Sportart suchen",
 "dir.sort": "Sortieren",
@@ -2384,10 +2552,10 @@
 
     var discCount = DISCIPLINES.filter(function(d){ return listingsIn(d.key).length; }).length;
     byId("proof").innerHTML = [
-      [LISTINGS.length + 20, t("proof.places")],
+      [GYMS.length, t("proof.indie")],
+      ["+" + FLY_LISTINGS.length, t("proof.fly")],
       [discCount, t("proof.disc")],
-      ["€0", t("proof.free")],
-      ["100%", t("proof.verified")]
+      ["€0", t("proof.free")]
     ].map(function(p){
       return '<div class="proof-item"><div class="proof-num">' + p[0] + '</div><div class="proof-txt">' + p[1] + '</div></div>';
     }).join("");
@@ -2401,6 +2569,80 @@
     }).join("");
 
     byId("get-listed").href = LISTING_MAIL;
+  }
+
+
+  /* ---------- OPENING HOURS ----------
+     Taken from each studio's own website (or confirmed by the studio), checked 27 Sept 2026.
+     Nothing here is estimated. Edit a line here when a studio changes its times.
+     kind: "open" = opening hours · "classes" = class times · "link" = times only on the studio's own timetable · "book" = session times shown when booking.
+     rows: [first day, last day, times, bank holidays?]  (0 = Monday … 6 = Sunday; times null = closed, "?" = not confirmed)
+     note: extra line shown under the hours (a translation key). */
+  var HOURS = {
+    "republic-of-jiu-jitsu": {kind:"classes", src:"republicofjiujitsu.ie", url:"https://www.republicofjiujitsu.ie/class-schedule-2026", note:"hrs.note.rojj",
+      rows:[[0,0,"18:00–20:00"],[1,4,"19:30–21:00"],[5,5,"11:00–14:00"],[6,6,null]]},
+    "headon-boxing-academy-ballsbridge": {kind:"classes", src:"headonboxing.ie", url:"https://headonboxing.ie/classes", note:"hrs.note.starts",
+      rows:[[0,0,"07:00–19:30"],[1,1,"07:00–20:15"],[2,2,"06:55–20:15"],[3,3,"07:00–18:30"],[4,4,"07:00–18:30"],[5,5,"08:50–12:50"],[6,6,"10:00–12:30"]]},
+    "headon-boxing-academy-churchtown": {kind:"classes", src:"headonboxing.ie", url:"https://headonboxing.ie/classes", note:"hrs.note.starts",
+      rows:[[0,0,"17:00–20:15"],[1,1,"07:00–19:15"],[2,2,"17:45–20:15"],[3,3,"07:00–19:30"],[4,4,"07:00–18:00"],[5,5,"08:15–11:45"],[6,6,"09:55–12:30"]]},
+    "headon-boxing-academy-leopardstown": {kind:"link", src:"headonboxing.ie", url:"https://headonboxing.ie/classes"},
+    "headon-boxing-academy-sandyford":    {kind:"link", src:"headonboxing.ie", url:"https://headonboxing.ie/classes"},
+    "headon-boxing-academy-baldoyle":     {kind:"link", src:"headonboxing.ie", url:"https://headonboxing.ie/classes"},
+    "underdog-boxing-gym": {kind:"link", src:"underdogboxinggym.ie", url:"https://underdogboxinggym.gymmasteronline.com/portal/account/book/class/schedule"},
+    "gravity-climbing-centre": {kind:"open", src:"gravityclimbing.ie", url:"https://www.gravityclimbing.ie/",
+      rows:[[0,4,"12:00–22:00"],[5,6,"10:00–20:00",1]]},
+    "perpetua-fitness": {kind:"open", src:"perpetua.ie", url:"https://perpetua.ie/windmill-lane",
+      rows:[[0,3,"05:30–21:00"],[4,4,"05:30–20:00"],[5,5,"07:00–14:00"],[6,6,"07:30–14:00"]]},
+    "reformation": {kind:"link", src:"reformation.ie", url:"https://www.reformation.ie/classes-menu"},
+    "dublin-buddhist-centre": {kind:"classes", src:"dublinbuddhistcentre.org", url:"https://dublinbuddhistcentre.org/yoga/", note:"hrs.note.dbc",
+      rows:[[0,0,"13:00–14:00"],[1,1,"13:00–14:00 · 17:30–18:45"],[2,2,"13:00–14:00 · 17:30–19:00"],[3,3,"18:00–19:15"],[4,4,"13:00–14:00"],[5,5,"10:00–11:30"],[6,6,null]]},
+    "little-bird-yoga": {kind:"link", src:"little-bird.ie", url:"https://little-bird.ie/schedule/"},
+    "hot-box-sauna": {kind:"book", src:"thehotboxsauna.ie", url:"https://thehotboxsauna.ie/"},
+    "nova-gym-phibsborough": {kind:"open", src:null, rows:[[0,3,"06:15–22:00"],[4,4,"06:15–21:00"],[5,6,"?"]]}
+  };
+  /* FLYEFIT gyms keep their hours in FLYEFIT.locations (Mon–Fri, Sat–Sun & bank holidays). */
+  function hoursFor(l){
+    if(!l || !l.loc) return null;
+    if(l.gym === FLYEFIT) return {kind:"open", src:"flyefit.ie", url:l.loc.page, rows:[[0,4,l.loc.hours[0]],[5,6,l.loc.hours[1],1]]};
+    return HOURS[l.slug] || null;
+  }
+  function dayName(i){
+    try { return new Intl.DateTimeFormat(LANG, {weekday:"short", timeZone:"UTC"}).format(new Date(Date.UTC(2024, 0, 1 + i))); }
+    catch(e){ return ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"][i]; }
+  }
+  function timesText(x, kind){ return x === null ? t(kind === "classes" ? "hrs.noClasses" : "hrs.closed") : x === "?" ? t("hrs.unknown") : x === "24h" ? t("hrs.24") : x; }
+  function todayIdx(){ return (new Date().getDay() + 6) % 7; }
+  /* one short line for cards and the "Today" slot: "Open today 12:00–22:00" */
+  function todayLine(l){
+    var h = hoursFor(l); if(!h || h.kind === "link" || h.kind === "book") return "";
+    var i = todayIdx(), row = (h.rows || []).filter(function(r){ return i >= r[0] && i <= r[1]; })[0];
+    if(!row || row[2] === "?") return "";
+    if(row[2] === null) return t(h.kind === "classes" ? "hrs.noClassesToday" : "hrs.closedToday");
+    if(row[2] === "24h") return t("hrs.24");
+    return t(h.kind === "classes" ? "hrs.classesToday" : "hrs.openToday", {t: timesText(row[2], h.kind)});
+  }
+  function hoursBox(l){
+    var h = hoursFor(l); if(!h) return "";
+    var src = h.src ? t("hrs.src", {src: h.src}) : t("hrs.srcGym");
+    if(h.kind === "book"){
+      return '<div class="box b-hours"><span class="box-label">' + t("hrs.open") + '</span><p>' + t("hrs.bookText") + '</p>' +
+        '<a class="ext" href="' + h.url + '" target="_blank" rel="noopener">' + t("hrs.book") + '</a></div>';
+    }
+    if(h.kind === "link"){
+      return '<div class="box b-hours"><span class="box-label">' + t("hrs.classes") + '</span><p>' + t("hrs.linkText") + '</p>' +
+        '<a class="ext" href="' + h.url + '" target="_blank" rel="noopener">' + t("hrs.see") + '</a></div>';
+    }
+    var i = todayIdx();
+    return '<div class="box b-hours"><span class="box-label">' + t(h.kind === "classes" ? "hrs.classes" : "hrs.open") + '</span><table class="hours">' +
+      h.rows.map(function(r){
+        var label = r[0] === r[1] ? dayName(r[0]) : dayName(r[0]) + "–" + dayName(r[1]);
+        if(r[3]) label += ", " + t("hrs.bh");
+        return '<tr' + (i >= r[0] && i <= r[1] ? ' class="is-today"' : '') + '><td>' + label + '</td><td>' + timesText(r[2], h.kind) + '</td></tr>';
+      }).join("") + '</table>' +
+      (h.note ? '<p class="note">' + t(h.note) + '</p>' : '') +
+      '<p class="note">' + src + '</p>' +
+      (h.url ? '<a class="ext" href="' + h.url + '" target="_blank" rel="noopener">' + t(h.kind === "classes" ? "hrs.see" : "hrs.site") + '</a>' : '') +
+    '</div>';
   }
 
   /* ---------- DIRECTORY ---------- */
@@ -2449,6 +2691,7 @@
       '<div class="result-main">' +
         '<h3 class="result-name"><a class="result-link" href="' + hrefFor(l) + '">' + nameFor(l) + '</a></h3>' +
         '<div class="result-meta">' + (showKind ? '<span class="kind">' + tr(d.label) + '</span>' : '') + '<span>' + whereFor(l) + '</span>' + (km != null ? '<span class="dist">' + kmLabel(km) + '</span>' : '') + '</div>' +
+        (todayLine(l) ? '<div class="today">' + todayLine(l) + '</div>' : '') +
         (note ? '<p class="result-note">' + note + '</p>' : '') +
       '</div>' +
       '<div class="result-visit">' + accessTag(g) + '</div>' +
@@ -2458,7 +2701,8 @@
   }
   function renderResults(){
     var list = finderList(), host = byId("groups"), q = dirQuery.trim();
-    var status = q ? t("dir.match", {p: plural(list.length), q: q.replace(/[<>&"]/g, "")}) : plural(list.length);
+    var status = q ? t("dir.match", {p: plural(list.length), q: q.replace(/[<>&"]/g, "")})
+      : activeFilter === "all" ? t("dir.summary", {n: GYMS.length, f: FLY_LISTINGS.length}) : plural(list.length);
     byId("dir-status").innerHTML = '<span>' + status + '</span>' + (locNote ? '<span>' + locNote + '</span>' : '') + (q ? '<button type="button" id="dir-clear">' + t("dir.clear") + '</button>' : '');
     if(q) byId("dir-clear").addEventListener("click", clearSearch);
     if(!list.length){
@@ -2565,11 +2809,12 @@
   function embedMap(q, label){
     return '<iframe class="map-embed" loading="lazy" onload="this.classList.add(\'is-loaded\')" referrerpolicy="no-referrer-when-downgrade" title="' + t("mapOf", {name: label}).replace(/"/g, "&quot;") + '" src="https://www.google.com/maps?q=' + encodeURIComponent(q) + '&output=embed"></iframe>';
   }
-  function glance(price, cap, g, where, whereSub){
-    return '<div class="glance" aria-label="' + t("go.before") + '">' +
+  function glance(price, cap, g, where, whereSub, today){
+    return '<div class="glance' + (today ? ' glance--4' : '') + '" aria-label="' + t("go.before") + '">' +
       '<div class="glance-item"><span class="glance-label">' + t("go.price") + '</span><span class="glance-value mono">' + price + '</span><span class="glance-sub">' + cap + '</span></div>' +
       '<div class="glance-item"><span class="glance-label">' + t("go.visit") + '</span>' + accessTag(g) + '<span class="glance-sub">' + tr(g.booking) + '</span></div>' +
       '<div class="glance-item"><span class="glance-label">' + t("go.where") + '</span><span class="glance-value">' + where + '</span>' + (whereSub ? '<span class="glance-sub">' + whereSub + '</span>' : '') + '</div>' +
+      (today ? '<div class="glance-item"><span class="glance-label">' + t("go.today") + '</span><span class="glance-value mono">' + today + '</span></div>' : '') +
     '</div>';
   }
   function flyHours(loc){
@@ -2661,7 +2906,7 @@
         '<h1>' + g.name + (l.multi ? '<span class="h1-sub">' + l.loc.short + '</span>' : '') + '</h1>' +
         '<div class="zone">' + tr(d.label) + ' · ' + whereFor(l) + (isFly ? " · " + t("flagZone") : "") + '</div>' +
       '</div>' + logoOrStamp(g, d) + '</div>' +
-      glance(priceLabel(g), tr(g.fromCap), g, l.loc.neighborhood, l.loc.address) +
+      glance(priceLabel(g), tr(g.fromCap), g, l.loc.neighborhood, l.loc.address, todayLine(l)) +
       '<div class="detail-cta"><a class="btn btn-dark" href="' + mapsLink(l.loc) + '" target="_blank" rel="noopener">' + t("cta.directions") + '</a>' +
         (isFly ? '<a class="btn btn-line" href="' + l.loc.page + '" target="_blank" rel="noopener">' + t("cta.flyGym") + '</a>'
                : (g.website ? '<a class="btn btn-line" href="' + g.website + '" target="_blank" rel="noopener">' + t("cta.site") + '</a>' : '')) +
@@ -2671,7 +2916,7 @@
           '<div class="box b-price"><h2>' + t("dropin") + '</h2><table class="price-table">' + priceRows + '</table></div>' +
           (isFly && l.loc.note ? '<div class="box b-note"><span class="box-label">' + t("worth") + '</span><p>' + t("fly.note." + l.loc.note) + '</p></div>' : '') +
           (!isFly && g.note ? '<div class="box b-note"><span class="box-label">' + t("worth") + '</span><p>' + tr(g.note) + '</p></div>' : '') +
-          (isFly ? flyHours(l.loc) + flyFacilities(l.loc) : '') +
+          (isFly ? flyHours(l.loc) + flyFacilities(l.loc) : hoursBox(l)) +
           '<div class="box b-book"><span class="box-label">' + t("booking") + '</span><p>' + tr(g.booking) + '</p></div>' +
         '</div>' +
         '<div>' +
